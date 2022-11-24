@@ -1,50 +1,49 @@
-import { Entity, model, property } from '@loopback/repository';
+import { Entity, model, property } from "@loopback/repository";
 
 @model()
 export class Todo extends Entity {
   @property({
-    type: 'string',
+    type: "string",
     id: true,
     generated: true,
   })
   id?: string;
 
   @property({
-    type: 'string',
+    type: "string",
     required: true,
   })
   title: string;
 
   @property({
-    type: 'string',
+    type: "string",
     required: true,
   })
   description: string;
 
   @property({
-    type: 'boolean',
+    type: "boolean",
     required: true,
   })
   isComplete: boolean;
 
   @property({
-    type: 'date',
+    type: "date",
     required: true,
   })
   createdAt: string;
 
   @property({
-    type: 'date',
+    type: "date",
     required: true,
   })
   updatedAt: string;
-
 
   constructor(data?: Partial<Todo>) {
     super(data);
   }
 }
 
-export interface TodoRelations { }
+export interface TodoRelations {}
 
 export type TodoWithRelations = Todo & TodoRelations;
